@@ -1,0 +1,1 @@
+UPDATE user SET devicetoken = '%s' where id = '%s';

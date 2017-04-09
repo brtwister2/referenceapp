@@ -1,0 +1,1 @@
+SELECT * FROM userpicture WHERE id = '%s'

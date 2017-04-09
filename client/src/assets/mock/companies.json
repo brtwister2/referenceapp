@@ -1,0 +1,10 @@
+[
+  {"id": 0, "name": "None - Not working", "checked": false},
+  {"id": 1, "name": "Microsoft", "checked": false},
+  {"id": 2, "name": "Google Inc", "checked": false},
+  {"id": 3, "name": "Vanhack", "checked": true},
+  {"id": 4, "name": "Bank of Montreal", "checked": false},
+  {"id": 5, "name": "Imperial Oil", "checked": false},
+  {"id": 6, "name": "CIBC", "checked": false},
+  {"id": 7, "name": "Suncor Energy", "checked": false}
+]

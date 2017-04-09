@@ -1,0 +1,1 @@
+SELECT * FROM picture WHERE id = '%s' ORDER BY 'created_at'

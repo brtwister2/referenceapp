@@ -1,0 +1,1 @@
+SELECT * FROM trip WHERE user_id  = '%s'

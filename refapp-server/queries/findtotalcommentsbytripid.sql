@@ -1,0 +1,1 @@
+SELECT count(trip_id) as count FROM `comment` where trip_id = '%s'

@@ -1,0 +1,1 @@
+UPDATE userpicture SET name = '%s', `order` = '%s' where id = '%s';

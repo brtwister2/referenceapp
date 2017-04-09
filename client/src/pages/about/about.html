@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{getTitle()}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div align="center" padding>
+      <label for="fileselect">
+        <ion-img src="http://192.168.0.9/refapp/userpicture/{{user.id}}"></ion-img>
+        <input type="file" (change)="filesAdded($edasvent)" id="fileselect" />
+      </label>
+      <ion-icon name="star" *ngFor="let icon of generateStars(user.urating)"></ion-icon>
+      <h2 *ngIf="isMe"><input type="text" class="contenteditable" [value]="user.name"/> </h2>
+      <h2 *ngIf="!isMe">{{user.name}}</h2>
+      <p *ngIf="isMe" (click)="pushCompanies()"><a>Working at {{user.ucname}}</a></p>
+      <p *ngIf="!isMe">Working at {{user.ucname}}</p>
+
+      <button *ngIf="isMe" color="danger" (click)="logout();" outline ion-button small block>Logout</button>
+
+      <button *ngIf="!isMe" ion-button small block (click)="requestReference()">Ask for reference</button>
+      <button *ngIf="!isMe" clear color="dark" ion-button small block  (click)="pushReferenceForm(null)">Write a reference this user</button>
+    </div>
+
+  <ion-list>
+    <ion-list-header>
+      My top references
+    </ion-list-header>
+
+    <ion-card *ngFor="let feed of feeds">
+      <ion-card-header  (click)="pushAbout(feed);">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="http://192.168.0.9/refapp/userpicture/{{feed.uid}}">
+          </ion-avatar>
+          <h2>{{feed.name}}</h2>
+          <p>Working at {{feed.ucname}}</p>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content (click)="pushReferenceForm(feed);">
+        <div>
+          <ion-icon name="star" *ngFor="let icon of generateStars(extractData(feed.data).rating)"></ion-icon>
+          <small>({{extractData(feed.data).rating}} Rating)</small>
+        </div>
+        <p>{{extractData(feed.data).message}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col right>
+          <ion-note>
+            {{feed.createdAt | date:'MM/dd/yyyy @ h:mma'}}
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+  </ion-list>
+
+</ion-content>

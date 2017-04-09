@@ -1,0 +1,1 @@
+DELETE FROM comment where id = '%s'

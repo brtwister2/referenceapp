@@ -1,0 +1,1 @@
+DELETE FROM friends WHERE uid IN ('%1$s','%2$s') and fid IN('%1$s','%2$s')

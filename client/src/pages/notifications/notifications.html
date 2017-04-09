@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let notification of notifications" (click)="pushReferenceForm(notification.uid)">
+      <ion-avatar item-left>
+        <img src="http://192.168.0.9/refapp/userpicture/{{notification.uid}}">
+      </ion-avatar>
+      <h2>{{notification.name}}</h2>
+      <h3>Hi! Could please reference me in my page?</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,1 @@
+SELECT id as uid,username,city FROM user WHERE id in (SELECT uid FROM friends WHERE fid = '%1$s' AND uid IN (SELECT fid FROM friends WHERE uid = '%1$s') )

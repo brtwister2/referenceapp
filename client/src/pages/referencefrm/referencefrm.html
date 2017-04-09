@@ -1,0 +1,119 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Reference form</ion-title>
+    <ion-buttons end  *ngIf="!serverloaded">
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="checkmark" color="clear"></ion-icon>
+      </button>
+    </ion-buttons>   
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div padding>
+    <ion-segment [(ngModel)]="switch" >
+      <ion-segment-button value="questionnaire">
+        Questionnaire
+      </ion-segment-button>
+      <ion-segment-button value="qualities">
+        Qualities
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <blockquote *ngIf="serverloaded">{{questions.message}}</blockquote>
+  <div *ngIf="serverloaded">
+      <ion-icon name="star" *ngFor="let icon of generateStars(questions.rating)"></ion-icon>
+      <small>({{questions.rating}} Rating)</small>
+  </div>
+  <div [ngSwitch]="switch">
+    <div *ngSwitchCase="'questionnaire'">
+      <div class="question-container">
+        <b>1.	How long did you work together (approx. dates)? What was your working relationship?</b>
+        <ion-item>
+          <ion-input [disabled]="serverloaded" type="text" [(ngModel)]="questions.q1"></ion-input>
+        </ion-item>
+      </div>
+      <div class="question-container">
+        <b>2.	What were the main duties of his/her job?</b>
+        <ion-item>
+          <ion-input [disabled]="serverloaded" type="text" [(ngModel)]="questions.q2"></ion-input>
+        </ion-item>
+      </div>
+      <div class="question-container">
+        <b>3.	What is your overall appraisal of his/her work?  How would you compare his/her 
+          performance to that of others in similar positions? Did he/she receive favorable performance evaluations? 
+        </b>
+        <ion-item>
+          <ion-input [disabled]="serverloaded" type="text" [(ngModel)]="questions.q3"></ion-input>
+        </ion-item>
+      </div>
+      <div class="question-container">
+        <b>4.	What are his/her strong points? What are his/her technical strengths? If you can, please give examples of how these strengths were demonstrated.</b>
+        <ion-item>
+          <ion-input [disabled]="serverloaded" type="text" [(ngModel)]="questions.q4"></ion-input>
+        </ion-item>
+      </div>
+      <div class="question-container">
+        <b>5.	How does he/she perform under pressure?  </b>
+        <ion-item>
+          <ion-input [disabled]="serverloaded" type="text" [(ngModel)]="questions.q5"></ion-input>
+        </ion-item>
+      </div>
+      <div class="question-container">
+        <b>6.	How does he/she get along with other people? (Supervisors, peers, and subordinates).  Can you describe a particular experience/occasion that really stands out in your mind where his/her interpersonal skills were exceptional (i.e. Solving a major conflict, satisfy an upset customer, etc.)?</b>
+        <ion-item>
+          <ion-input [disabled]="serverloaded" type="text" [(ngModel)]="questions.q6"></ion-input>
+        </ion-item>
+      </div>                              
+    </div>
+
+    <ion-list *ngSwitchCase="'qualities'">
+      <ion-item>
+        <ion-label>Attendance</ion-label>
+        <ion-select [disabled]="serverloaded" [(ngModel)]="questions.q7">
+          <ion-option value="poor">Poor</ion-option>
+          <ion-option value="average">Average</ion-option>
+          <ion-option value="excellent">Excellent</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Dependability & Overall Attitude</ion-label>
+        <ion-select [disabled]="serverloaded" [(ngModel)]="questions.q8">
+          <ion-option value="poor">Poor</ion-option>
+          <ion-option value="average">Average</ion-option>
+          <ion-option value="excellent">Excellent</ion-option>
+        </ion-select>
+      </ion-item> 
+      <ion-item>
+        <ion-label>Ability to Take on Responsibility</ion-label>
+        <ion-select [disabled]="serverloaded" [(ngModel)]="questions.q9">
+          <ion-option value="poor">Poor</ion-option>
+          <ion-option value="average">Average</ion-option>
+          <ion-option value="excellent">Excellent</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Potential for Advancement</ion-label>
+        <ion-select [disabled]="serverloaded" [(ngModel)]="questions.q10">
+          <ion-option value="poor">Poor</ion-option>
+          <ion-option value="average">Average</ion-option>
+          <ion-option value="excellent">Excellent</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Degree of Supervision Needed</ion-label>
+        <ion-select [disabled]="serverloaded" [(ngModel)]="questions.q11">
+          <ion-option value="poor">Poor</ion-option>
+          <ion-option value="average">Average</ion-option>
+          <ion-option value="excellent">Excellent</ion-option>
+        </ion-select>
+      </ion-item>                    
+    </ion-list>
+
+  </div>
+
+</ion-content>

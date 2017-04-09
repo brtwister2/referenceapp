@@ -1,0 +1,1 @@
+SELECT blckusr as u FROM block where user = '%s'

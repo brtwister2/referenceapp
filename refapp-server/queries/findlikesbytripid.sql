@@ -1,0 +1,1 @@
+SELECT  user.id, user.username, unix_timestamp(like.created_at) * 1000 as created_at from travellrs.like JOIN user ON like.user_id = user.id WHERE trip_id = '%s';

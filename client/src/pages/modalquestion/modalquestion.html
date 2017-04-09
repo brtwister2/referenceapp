@@ -1,0 +1,26 @@
+<!--
+  Generated template for the Modalquestion page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Rate</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <b>Select a rate for this user</b>
+    <div class="ratingstars">
+        <ion-icon (click)="starc(1)" [ngClass]="{'active': starcvar >= 1 }" name="star"></ion-icon>
+        <ion-icon (click)="starc(2)" [ngClass]="{'active': starcvar >= 2 }" name="star"></ion-icon>
+        <ion-icon (click)="starc(3)" [ngClass]="{'active': starcvar >= 3 }" name="star"></ion-icon>
+        <ion-icon (click)="starc(4)" [ngClass]="{'active': starcvar >= 4 }" name="star"></ion-icon>
+        <ion-icon (click)="starc(5)" [ngClass]="{'active': starcvar >= 5 }" name="star"></ion-icon>
+    </div>  
+    <br/><br/>
+    <b>Please write a simple comment</b>
+    <ion-textarea [(ngModel)]="comment" placeholder="type your comment here" maxlength="100"></ion-textarea>
+    <button ion-button block danger (click)="dismiss()">Close</button>
+</ion-content>

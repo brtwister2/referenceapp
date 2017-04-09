@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Feeds</ion-title>
+        <ion-buttons end>
+          <button ion-button icon-only (click)="pushNotifications(feed);">
+            <ion-icon name="notifications" color="clear"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let feed of feeds">
+        <ion-card-header  (click)="pushAbout(feed);">
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="http://192.168.0.9/refapp/userpicture/{{feed.uid}}">
+                </ion-avatar>
+                <h2>{{feed.name}}</h2>
+                <p>Working at {{feed.ucname}}</p>
+            </ion-item>
+        </ion-card-header>
+
+        <ion-card-content (click)="pushReferenceForm(feed);">
+            <div>
+                <ion-icon name="star" *ngFor="let icon of generateStars(extractData(feed.data).rating)"></ion-icon>
+                <small>({{extractData(feed.data).rating}} Rating)</small>
+            </div>
+            <p>{{extractData(feed.data).message}}</p>
+        </ion-card-content>
+
+        <ion-row>
+            <ion-col right>
+                <ion-note>
+                   {{feed.createdAt | date:'MM/dd/yyyy @ h:mma'}}
+                </ion-note>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+</ion-content>

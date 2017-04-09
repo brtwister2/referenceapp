@@ -1,0 +1,43 @@
+page-about {
+
+    ion-img {
+      width: 140px;
+      height: 140px;
+      display: block;
+      background: transparent;
+      img {
+        border-radius: 360px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    ion-icon[name="star"]{
+      color:#ffc519;
+      font-size: 18pt;
+      margin-top: 10px;
+    }
+
+    #fileselect {
+      display: none;
+    }
+
+    h2 {
+      margin: 0;
+      margin-top: 7px;
+    }
+
+    p {
+      margin: 3px;
+    }
+
+    .contenteditable{
+      text-align: center;
+      border: none;
+      background: transparent;
+    }
+    .col{
+      text-align: right;
+    }    
+
+}

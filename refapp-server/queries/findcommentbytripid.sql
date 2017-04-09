@@ -1,0 +1,1 @@
+SELECT comment.id, user.id as uid,user.username, text as 'desc', unix_timestamp(created_at) * 1000 as created_at FROM comment JOIN user ON user.id = comment.user_id WHERE trip_id = '%s' ORDER BY comment.created_at ASC

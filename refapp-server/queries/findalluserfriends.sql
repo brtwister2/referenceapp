@@ -1,0 +1,2 @@
+/*SELECT id as uid,username FROM user WHERE id in (SELECT uid FROM friends WHERE fid = '%1$s' OR uid IN (SELECT fid FROM friends WHERE uid = '%1$s'))*/
+SELECT distinct(id) as uid,username FROM user WHERE id in (SELECT uid FROM friends WHERE fid = '%1$s') OR id in (SELECT fid FROM friends WHERE uid = '%1$s') 

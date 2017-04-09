@@ -1,0 +1,1 @@
+SELECT  user.id, user.username, unix_timestamp(going.created_at) * 1000 as created_at from going JOIN user ON going.user_id = user.id WHERE trip_id = '%s';

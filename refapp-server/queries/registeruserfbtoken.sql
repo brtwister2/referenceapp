@@ -1,0 +1,1 @@
+UPDATE user SET fbtoken = '%s' where id = '%s';

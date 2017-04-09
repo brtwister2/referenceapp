@@ -1,0 +1,1 @@
+INSERT INTO userpicture(`name`,`order`,`user_id`) VALUES ('%s','%s','%s')

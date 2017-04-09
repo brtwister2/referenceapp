@@ -1,0 +1,1 @@
+SELECT id,created_at FROM picture WHERE user_id = '%s'

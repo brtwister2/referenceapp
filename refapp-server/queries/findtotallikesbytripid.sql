@@ -1,0 +1,1 @@
+SELECT count(trip_id) as count FROM `like` where trip_id = '%s'

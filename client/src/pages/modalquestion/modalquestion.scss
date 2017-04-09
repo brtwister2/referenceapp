@@ -1,0 +1,17 @@
+page-modalquestion {
+    ion-icon{
+        font-size: 2.2em;        
+    }
+    .icon[name="star"]{
+        color:#333;
+    }
+
+    .active:before{
+        color: #ffc519;
+    }
+    textarea{
+        height: 60px;
+        border: 1px solid #eaeaea;
+        padding: 9px;        
+    }
+}

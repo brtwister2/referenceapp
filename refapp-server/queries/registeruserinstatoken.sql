@@ -1,0 +1,1 @@
+UPDATE user SET instatoken = '%s' where id = '%s';

@@ -1,0 +1,1 @@
+SELECT * from user where token = '%s'
